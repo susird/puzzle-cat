@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-color: rgba(168, 223, 182, 0.774);
+  --main-ligth-color: rgb(187 184 206 / 77%);
+  --secondary-color: #f8edabd8;
+  --white-color: white;
+  --blue-color: rgba(175, 222, 236, 0.753);
+}
+
+body {
+  background: linear-gradient(217deg, rgba(224, 119, 119, 0.8), rgba(215, 233, 150, 0) 70.71%),
+    linear-gradient(127deg, rgba(165, 179, 197, 0.8), rgba(161, 212, 212, 0) 70.71%),
+    linear-gradient(336deg, rgba(130, 130, 224, 0.8), rgba(68, 68, 133, 0) 70.71%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Chewy', cursive;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  padding: 50px;
+}
+
+#pieces {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 430px;
+  height: 480px;
+}
+
+#puzzle {
+  border: 10px solid var(--blue-color);
+  border-radius: 10px;
+  width: 398px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.piece {
+  width: 125px;
+  height: 125px;
+  background-size: cover;
+  margin: 10px;
+}
+
+.placeholder {
+  background-color: var(--main-ligth-color);
+  outline: 2px solid var(--blue-color);
+  width: 126px;
+  height: 127px;
+  transition: 1s;
+}
+
+.placeholder.hover {
+  background-color: var(--secondary-color);
+}
+
+.placeholder .piece {
+  margin: 0;
+}
+
+#message {
+  transition: transform 1s;
+  color: black;
+  text-align: center;
+  display: none;
+  font-size: 70px;
+}
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.you-win #message {
+  padding-top: 20px;
+  display: block;
+}
+
+.you-win .placeholder {
+  outline: none;
+}
+
+.you-win #pieces {
+  display: none;
+}
